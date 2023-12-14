@@ -1,0 +1,5 @@
+:is(*, ::after, ::before){margin:0px;padding:0px;outline: none;text-decoration: none;list-style: none;box-sizing: border-box;}
+
+html{height: 100%;}
+body{height: inherit;width: 100%;max-width:1440px;margin: 0px auto; display: flex;background-color: #000000d8;color: #fff;}
+body #container{margin: auto;width: fit-content;height: auto;}
