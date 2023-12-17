@@ -556,10 +556,10 @@
 //     numberLine = numberLine % 2 == 0? ++numberLine : numberLine; 
 //     let counter = 2;
 //     let counterSpace = numberLine-2;
-//     let space = ' ';
-//     let star = '*';
-//     let arrStars = [];
-//     let arrSpace = [];
+//     const space = ' ';
+//     const star = '*';
+//     const arrStars = [];
+//     const arrSpace = [];
 //     let arrResult = [];
 //     let arrStock = [];
 //     for(let i = 0;i<numberLine;i++){
@@ -615,4 +615,239 @@
 //         arrSpace.length = 0;
 //     }
 // }
-// create(10);
+// create(21);
+
+
+    // exercice 10
+
+    // function create(numberOfLine=5){
+    //     let value = '';
+    //     for(let i = 0;i<numberOfLine;i++){
+    //         for(let j = 0;j<numberOfLine;j++){
+    //             value+='*';
+    //         }
+    //         console.log(value);
+    //         console.log();
+    //         value='';
+    //     }
+    // }
+    // create();
+
+
+    // exercice 11
+
+    // function create(numberOfLine=5){
+    //     let value = '';
+    //     for(let i = 1;i<=numberOfLine;i++){
+    //         for(let j = 0;j<i;j++){
+    //             value+='* ';
+    //         }
+    //         console.log(value);
+    //         value='';
+    //     }
+    // }
+    // create();
+
+
+    // exercice 12
+
+    // function create(numberOfLine=5){
+    //     let value = '';
+    //     let counter = numberOfLine;
+    //     for(let i = 1;i<=numberOfLine;i++){
+    //         for(let j = counter;j>0;j--){
+    //             value+='* ';
+    //         }
+    //         counter--;
+    //         console.log(value);
+    //         value='';
+    //     }
+    // }
+    // create();
+
+
+    // exercice 13
+
+    // function create(numberOfLine=5){
+    //     let value = '';
+    //     let counter = 1;
+    //     for(let i = 1;i<=numberOfLine;i++){
+    //         for(let s = numberOfLine-counter;s>0;s--){
+    //             value+=' ';
+    //         }
+    //         counter++;
+    //         for(let j = 0;j<i;j++){
+    //             value+=`*`;
+    //         }
+    //         console.log(value);
+    //         value = '';
+    //     }
+    // }
+    // create();
+
+
+    // exercice 14
+
+    // function create(numberOfLine=5){
+    //     let value = '';
+    //     let counter = numberOfLine;
+    //     for(let i = 0;i<numberOfLine;i++){
+    //         for(let s = 0;s<i;s++){
+    //             value+=' ';
+    //         }
+    //         for(let j = counter;j>0;j--){
+    //             value+='*';
+    //         }
+    //         counter--;
+    //         console.log(value);
+    //         value='';
+    //     }
+    // }
+    // create(10);
+
+
+    // exercice 15
+
+    // function create(numberOfLine=4){
+    //     let value = '';
+    //     const star = '*';
+    //     counter = 2;
+    //     for(let i =0;i<(numberOfLine*2)-1;i++){
+    //         if(i < (numberOfLine)){
+    //             for(let j = 0;j<numberOfLine-i;j++){
+    //                 value+=star;
+    //             }
+    //         }
+    //         else if(i >= (numberOfLine)){
+    //             for(let j = 0;j<counter;j++){
+    //                 value+=star;
+    //             }
+    //             counter++;
+    //         }
+    //         console.log(value);
+    //         value='';
+    //     }
+    // }
+    // create();
+
+
+    // exercice 16
+
+    // function create(numberOfLine=4){
+    //     let value = '';
+    //     let counter = 1;
+    //     for(let i = 0;i<numberOfLine;i++){
+    //         for(let s = 0;s<numberOfLine-counter;s++){
+    //             value+=' ';
+    //         }
+    //         counter++;
+    //         for(let j = -1;j<i;j++){
+    //             if(j === (i-1)){
+    //                 value+='*';
+    //             }else if(j!==i-1){
+    //                 value+='* ';
+    //             }
+    //         }
+    //         console.log(value);
+    //         value='';
+    //     }
+    // }
+    // create(9);
+
+
+    // exercice 17
+
+    // function create(numberOfLine=4){
+    //     let value = '';
+    //     for(let i =0;i<numberOfLine;i++){
+    //         for(let s = 0;s<i;s++){
+    //             value+=' ';
+    //         }
+    //         for(let j = (i+1);j<=numberOfLine;j++){
+    //             if(j===numberOfLine){
+    //                 value+=j;
+    //             }else if(j!==numberOfLine){
+    //                 value+=`${j} `;
+    //             }
+    //         }
+    //         console.log(value);
+    //         value='';
+    //     }
+    // }
+    // create(9);
+
+
+    // exercice 18
+
+    // function create(numberOfLine=4){
+    //     let value = '';
+    //     let counterSpace = 2;
+    //     let counterNumber = 1;
+    //     for(let i =0;i<(numberOfLine*2)-1;i++){
+    //         if(i<numberOfLine){
+    //             for(let s = 0;s<i;s++){
+    //                 value+=' ';
+    //             }
+    //             for(let j = (i+1);j<=numberOfLine;j++){
+    //                 if(j===numberOfLine){
+    //                     value+=j;
+    //                 }else if(j!==numberOfLine){
+    //                     value+=`${j} `;
+    //                 }
+    //             }
+    //         }else if(i>=numberOfLine){
+    //             for(let s = 0;s<numberOfLine-counterSpace;s++){
+    //                 value+=' ';
+    //             }
+    //             counterSpace++;
+    //             for(let s = numberOfLine-counterNumber;s<=numberOfLine;s++){
+    //                 if(s===numberOfLine){
+    //                     value+=`${s}`;
+    //                 }else if(s!==numberOfLine){
+    //                     value+=`${s} `;
+    //                 }
+    //             }
+    //             counterNumber++;
+    //         }
+    //         console.log(value);
+    //         value='';
+    //     }
+    // }
+    // create(9);
+
+
+    // exercice 19
+
+    // function create(numberOfLine=4){
+    //     let value = '';
+    //     let counterSpace = 1;
+    //     for(let i = 0;i<numberOfLine;i++){
+    //         for(let s = 0;s<numberOfLine-counterSpace;s++){
+    //             value+=' ';
+    //         }   
+    //         counterSpace++;
+    //         for(let j = -1;j<i;j++){
+    //             if(i===0||i===numberOfLine-1){
+    //                 if(j===-1 && j==i-1){
+    //                     value+='*';
+    //                 }
+    //                 else if(j===-1){
+    //                     value+='* ';
+    //                 }
+    //                 else if(j!==-1 && j!==i-1){
+    //                     value+='* ';
+    //                 }
+    //                 else if(j===i-1){
+    //                     value+='*';
+    //                 }
+    //             }else if(i!==0 && i!==numberOfLine-1){
+    //                 if(j===-1){value+='*';}
+    //                 else if(j!=-1&&j!=i-1){value+='  ';}
+    //                 else if(j===i-1){value+=' *';}
+    //             }
+    //         }
+    //         console.log(value);
+    //         value='';
+    //     }
+    // }
+    // create(9);
