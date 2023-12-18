@@ -1,340 +1,4 @@
-
-
-// const myPromise = new Promise(function(resolve,reject){
-//     const x = false;
-//     if(x){
-//         resolve('I LOVE YOU');
-//     }
-//     else if(x === false){
-//         reject('I HATE YOU');
-//     }
-// });
-// myPromise.then(function(val){
-//     setTimeout(function(){console.log(val,0);},1500);
-// },function(error){
-//     setTimeout(function(){console.log(error,1);},1500);
-// });
-
-// const myPromise = new Promise(function(resolve,reject){
-//     const bool = false;
-//     if(bool){
-//         resolve(`I Love You !`);
-//     }
-//     else if(bool === false){
-//         reject(`I Hate You !`);
-//     };
-// });
-// myPromise.then(function(val){
-//     console.log(val);
-// },function(val){
-//     console.log(val);
-// });
-
-// const str = 'mohamed Guenfoudi.';
-// function run(stn=''){
-//     let sentence = stn.toLowerCase().trim();
-//     if(sentence.length >= 1){
-//         let counterLetters = 0;
-//         let counterVowels = 0;
-//         let counterWords = 1;
-//         for(let i = 0;i<sentence.length;i++){
-//             if(sentence[i] !== ' '){
-//                 counterLetters++;
-//             }
-//             switch(sentence[i]){
-//                 case 'a':
-//                 case 'e':
-//                 case 'i':
-//                 case 'u':
-//                 case 'o':
-//                 case 'y':
-//                     counterVowels++;
-//             }
-//         }
-//         console.log('number of Letters is : ',counterLetters);
-//         console.log('number of Vowels is : ',counterVowels);
-//         for(let i = 0;i<sentence.length;i++){
-//             if(sentence[i] === ' '){
-//                 counterWords++;
-//             }
-//         }
-//         console.log('number of words is : ',counterWords);
-//     }
-// }
-// run(str);
-
-
-// function run(){
-//     return new Promise(function(resolve,reject){
-
-//         const val = 1;
-//         if(val === 3){
-//             reject({
-//                 name:'med',
-//                 val: 'Error 404'
-//             });
-//         }
-//         if(val === 4){
-//             reject({
-//                 name:'adnane',
-//                 val: 'Error 405'
-//             });
-//         }
-//         if(val < 3){
-//             resolve('success');
-//         }
-//     });
-// };
-// run().then(function(msg){
-//     console.log(msg);
-// }).catch((error) => {
-//     console.log(error.name,` : `,error.val);
-// });
-// function run(){
-//     return new Promise(function(resolve,reject){
-//         const value = 'false';
-//         if(value === true){
-//             resolve({name:'adnane',age:13});
-//         }
-//         else if(value === false){
-//             resolve({name:'mohamed',age:26});
-//         }
-//         else{
-//             reject({name:'Hubal',age:10});
-//         }
-//     });
-// };
-// run().then(function(obj){
-//     console.log(`this guy ${obj.name} is legend, he have ${obj.age} years old`);
-// }).catch(function(obj){
-//     console.log(`this guy ${obj.name} is crazy, he have ${obj.age} years old`);
-// });
-
-// function SERVER(request){
-//     return new Promise(function(resolve,reject){
-//         if(request === 'telegram'){
-//             console.log(`hello ${request}!`);
-//             resolve(request);
-//         }else{    
-//             reject('only we can talking with TELEGRAM !');
-//         }
-//     });
-// }
-// function processRequest(request){
-//     return new Promise(function(resolve,reject){
-//         // console.log('Processing Response');
-//         resolve(`extra information + ${request}`)
-//     });
-// }
-
-// SERVER('telegram').then(function(val){
-//     console.log('run !');
-//     return processRequest(val);
-// }).then(function(val){
-//     console.log(val);
-// }).catch(erorr => {
-//     console.log(erorr);
-// });
-
-
-
-// function Server(objUser){
-//     return new Promise(function(resolve,reject){
-//         if(objUser.primaryKey === '0641577616' && objUser.password === 'moh2009*'){
-//             objUser.color = 'red';
-//             objUser.favoriteSport = 'footBall';
-//             objUser.favoriteLanguage = 'JavaScript';
-//             setTimeout(function(){resolve(objUser);},3000);
-//         }else{
-//             setTimeout(function(){reject();},3000);
-//         }
-//         return 'true';
-//     });
-// }
-// function accessAccount(primaryKey,password){
-//     return new Promise(async function(resolve,reject){
-//         console.log(10)
-//         await Server({primaryKey:primaryKey,password:password}).then(function(user){
-//             resolve(user);
-//         }).catch(function(){
-//             // reject(`primaryKey or Password not incorrect !`);
-//             console.log(`primaryKey or Password not incorrect !`);
-//         });
-//         console.log(12)
-//     });
-// }
-// function Color(user){
-//     return new Promise(function(resolve,reject){
-//         if(user.color === `blue`){
-//             resolve(`Same color`);
-//         }else{
-//             reject(`not Same Color !`);
-//         }
-//     });
-// }
-// accessAccount('0641577616','moh2 009*').then(function(user){
-//     console.log(user);
-//     return Color(user);
-// }).then(function(bool){
-//     console.log(bool);
-// })
-// .catch(function(msg){
-//     console.log(msg);
-// });
-
-
-// console.log(`before`);
-// getUser(10,'Mohamed Guenfoudi',function(userObj){
-//     let user = userObj;
-//     console.log(user);
-//     getProducts(function(products){
-//         user.products = products;
-//         console.log(user);
-//     });
-// });
-// // console.log(user);
-// console.log(`between`);
-// console.log(`after`);
-// function getUser(id,userName,callBack){
-//     setTimeout(function(){
-//         return callBack({id: id,userName: userName});
-//     },2000);
-// }
-// function getProducts(callBack){
-//     setTimeout(function(){
-//         const products = [`products0`,`products1`,`products2`];
-//         return callBack(products);
-//     },2000);
-// }
-
-
-
-
-
-
-// function getUser(id,userName){
-//     return new Promise( function(resolve,reject){
-//         const bool = true;
-//         setTimeout(() => {
-//             if(bool){
-//                     resolve({id:id,userName:userName});
-//                 }else{
-//                     reject('user not found !')
-//                 }
-//         }, 2000);
-//     });
-// };
-
-// function getProducts(user){
-//     const bool = true;
-//     return new Promise( function(resolve,reject){
-//         setTimeout(() => {
-//             if(bool){
-//                 const products = [`product0`,`product1`,`product2`];
-//                 user.products = products;
-//                 return resolve(`products : ${user.products}`);
-//             }else{
-//                 return reject(`products not found !!`)
-//             }
-//         },3000);
-//     });
-// }
-
-// async function run(){
-//     console.log(`before`);
-//     const t1 = await getUser(10,'Mohamed Guenfoudi').then(async function(user){
-//         console.log(user);
-//         await getProducts(user).then(function(product){console.log(product);}).catch(function(error){console.log(`erorr : `, error);});
-//     }).catch(function(error){
-//         console.log(error);
-//     });
-//     console.log(`between`);
-//     console.log(`after`);
-// }
-// run();
-
-
-// function run(id){
-//     return new Promise((resolve,reject) => {
-//         setTimeout(function(){
-//             if(id === 10){
-//                 resolve({id:id,name:'mohamed guenfoudi',age:26});
-//             }
-//             else{
-//                 reject('user not found');
-//             }
-//         },2000);
-//     });
-// };
-
-// function calc(res){
-//     return new Promise(function(resolve,reject){
-//         const bool = false;
-//         setTimeout(() => {
-//             if(bool){
-//                 resolve(`yearBirth : ${2023-res.age}`);
-//             }else{
-//                 reject('age !!')
-//             }
-//         }, 2000);
-//     }); 
-// }
-
-// (async function(){
-//     console.log(9);
-//     try{
-//         await run(10).then(async function(result){
-//             console.log(result);
-//             return await calc(result);
-//         }).then(function(birthDay){
-//             console.log(birthDay);
-//         });
-//     }catch(error){
-//         console.log(error);
-//     }
-//     console.log(11);
-//     console.log(12);
-// }())
-
-
-
-// function server(value){
-//     return new Promise(function(resolve,reject){
-//         setTimeout(function(){
-//             if(value === true){
-//                 resolve();
-//             }else if(value == false){
-//                 reject();
-//             }
-//         },5000);
-//     });
-// }
-
-// function sendRquest(value){
-//     return new Promise( function(resolve,reject){
-//         setTimeout(async function(){
-//             console.log(`the operation it's progress !!! wait`);
-//             if(value === value){
-//                 await server(value).then(() => {
-//                     console.log(`the operation it's susses`);
-//                     resolve(11);
-//                 }).catch(() => {
-//                     console.log(`the operation it's field`);
-//                     reject(0);
-//                 });
-//             }
-//         },3000);
-//     });
-// }
-// (async function(){
-//     console.log(10);
-//     await sendRquest(true).then((num) => {console.log(num);}).catch((num) => {console.log(num);});
-//     console.log(12);
-//     console.log(13);
-// }());
-
-
-// ====== Exercices Stars
+// ====== Exercices 
 
 
     // exercice 0
@@ -848,6 +512,198 @@
     //         }
     //         console.log(value);
     //         value='';
+    //     }
+    // }
+    // create(9);
+
+
+    // exercice 20
+
+    // function create(numberOfLine=4){
+    //     let value = '';
+    //     let counter = numberOfLine;
+
+    //     for(let i = 0;i<numberOfLine;i++){
+    //         for(let s = 0;s<numberOfLine-counter;s++){
+    //             value+=' ';
+    //         }
+    //         counter--;
+    //         for(let j = 1;j<=numberOfLine-i;j++){
+    //             if(i===0){
+    //                 if(j===1){value+='*';continue;}
+    //                 value+=' *';
+    //             }
+    //             else if(j===1){
+    //                 value+='*';
+    //             }
+    //             else if(j != numberOfLine-i){
+    //                 value+='  ';
+    //             }
+    //             else if(j == numberOfLine-i){
+    //                 value+=' *';
+    //             }
+    //         }
+    //         console.log(value);
+    //         value='';
+    //     }
+    // }
+    // create(5);
+
+
+    // exercice 21
+
+    // function create(numberOfLine=4){
+    //     let value = '';
+    //     let counterSpace = 1;
+    //     let counterStar = 0;
+
+    //     for(let i =1;i<=((numberOfLine*2)-1);i++){
+    //         if(i<=numberOfLine){
+    //             for(let s = numberOfLine-i;s>0;s--){
+    //                 value+=' ';
+    //             }
+    //             for(let j = 0;j<i;j++){
+    //                 if(j===i-1){
+    //                     value+='*';
+    //                     continue;
+    //                 }
+    //                 else if(j!=0){
+    //                     value+='  ';continue;
+    //                 }
+    //                 value+='* ';
+    //             }
+    //         }else if(i>numberOfLine){
+    //             for(let s = 0;s<counterSpace;s++){
+    //                 value+=' ';
+    //             }
+    //             counterSpace++;
+    //             for(let j = numberOfLine-counterStar-1;j>0;j--){
+    //                 if(j===numberOfLine-counterStar-1){value+='*';continue;}
+    //                 else if(j===1){value+=' *';}
+    //                 else if(j!=numberOfLine-counterStar-1){value+='  ';continue;}
+    //             }
+    //             counterStar++;
+    //         }
+    //         console.log(value);
+    //         value='';
+    //     }
+    // }
+    // create(5);
+
+
+    // exercice 22
+
+    // function create(numberOfLine=4){
+    //     let value = '';
+    //     let counterSpace = 1;
+    //     let counterStar = 2;
+
+    //     for(let i =0;i<((numberOfLine*2)-1);i++){
+    //         if(i<numberOfLine){
+    //             for(let s = 0;s<i;s++){
+    //                 value+=' ';
+    //             }
+    //             for(let j = numberOfLine-i;j>0;j--){
+    //                 if(i==0){if(j===numberOfLine-i){value+='*';continue}value+=' *';}
+    //                 else if(j===numberOfLine-i){value+='*';}
+    //                 else if(j===1){value+=' *'}
+    //                 else if(j!==numberOfLine-i && j!=1){value+='  ';}
+    //             }
+    //             console.log(value);
+    //             value='';
+    //         }else if(i>=numberOfLine){
+    //             for(let s = numberOfLine-counterSpace-1;s>0;s--){
+    //                 value+=' ';
+    //             }
+    //             counterSpace++;
+    //             for(let j =0;j<counterStar;j++){
+    //                 if(i===(numberOfLine*2)-2){if(j===0){value+='*';continue;}value+=' *';}
+    //                 else if(j===0){value+='*';}
+    //                 else if(j!==counterSpace-1 && j!==0){value+='  ';}
+    //                 else if(j===counterSpace-1){value+=' *';}
+    //             }
+    //             counterStar++;
+    //             console.log(value);
+    //             value='';
+    //         }
+    //     }
+    // }
+    // create(9);
+
+
+    // exercice 23
+        // Pascal's triangle
+    // function create(numberOfLine=4){
+    //     let value = 0;
+    //     let valuespace = '';
+    //     let counterSpace = 1;
+    //     let arrStock = [];
+    //     const arrResult = [];
+    //     for(let i = 1;i<=numberOfLine;i++){
+    //         for(let j=1;j<=i;j++){
+    //             if(i===1){
+    //                 arrStock.push(1);
+    //                 arrResult.push(1);
+    //                 continue;
+    //             }
+    //             if(i===2){
+    //                 arrStock.push(1);
+    //                 arrResult.push(1);
+    //                 continue;
+    //             }else if(i>2){
+    //                 if(j===1 || j===i){
+    //                     arrResult.push(1);
+    //                 }else{
+    //                     value = arrStock[j-2]+arrStock[j-1];
+    //                     arrResult.push(value);
+    //                 }
+    //             }
+                
+    //         }
+    //         // add espace
+    //         for(let s = numberOfLine-counterSpace;s>0;s--){
+    //             valuespace+=' ';
+    //         }
+    //         console.log(`${valuespace}${arrResult.join(' ')}`);
+    //         valuespace='';
+    //         counterSpace++;
+    //         arrStock = [...arrResult];
+    //         arrResult.length = 0;
+    //     }
+    // }
+    // create(5);
+
+
+    // exercice 24
+        
+    // function create(numberOfLine=4){
+    //     let value = '';
+    //     let counterStar = 1;
+    //     for(let i =0;i<numberOfLine*2-1;i++){
+    //         if(i<numberOfLine){
+    //             for(let j = -1;j<i;j++){
+    //                 if(j!==i-1){
+    //                     value+='* ';
+    //                 }
+    //                 else if(j===i-1){
+    //                     value+='*';
+    //                 }
+    //             }
+    //             console.log(value);
+    //             value = '';
+    //         }else if(i>=numberOfLine){
+    //             for(let j = numberOfLine-counterStar;j>0;j--){
+    //                 if(j!==1){
+    //                     value+='* ';
+    //                 }
+    //                 else if(j===1){
+    //                     value+='*';
+    //                 }
+    //             }
+    //             counterStar++;
+    //             console.log(value);
+    //             value = '';
+    //         }
     //     }
     // }
     // create(9);
