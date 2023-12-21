@@ -633,45 +633,35 @@
 
     // exercice 23
         // Pascal's triangle
-    // function create(numberOfLine=4){
-    //     let value = 0;
-    //     let valuespace = '';
-    //     let counterSpace = 1;
-    //     let arrStock = [];
-    //     const arrResult = [];
-    //     for(let i = 1;i<=numberOfLine;i++){
-    //         for(let j=1;j<=i;j++){
-    //             if(i===1){
-    //                 arrStock.push(1);
-    //                 arrResult.push(1);
-    //                 continue;
-    //             }
-    //             if(i===2){
-    //                 arrStock.push(1);
-    //                 arrResult.push(1);
-    //                 continue;
-    //             }else if(i>2){
-    //                 if(j===1 || j===i){
-    //                     arrResult.push(1);
-    //                 }else{
-    //                     value = arrStock[j-2]+arrStock[j-1];
-    //                     arrResult.push(value);
-    //                 }
-    //             }
-                
-    //         }
-    //         // add espace
-    //         for(let s = numberOfLine-counterSpace;s>0;s--){
-    //             valuespace+=' ';
-    //         }
-    //         console.log(`${valuespace}${arrResult.join(' ')}`);
-    //         valuespace='';
-    //         counterSpace++;
-    //         arrStock = [...arrResult];
-    //         arrResult.length = 0;
-    //     }
-    // }
-    // create(5);
+    // exercice 23
+        // Pascal's triangle
+    function create(numberOfLine){
+        let value = 0;
+        let valuespace = '';
+        let counterSpace = 1;
+        let arrStock = [];
+        const arrResult = [];
+        for(let i = 1;i<=numberOfLine;i++){
+            for(let j=1;j<=i;j++){
+                if(j===1 || j===i){
+                    arrResult.push(1);
+                    continue;
+                }
+                value = arrStock[j-2]+arrStock[j-1];
+                arrResult.push(value);
+            }
+            // add espace
+            for(let s = numberOfLine-counterSpace;s>0;s--){
+                valuespace+=' ';
+            }
+            console.log(`${valuespace}${arrResult.join(' ')}`);
+            valuespace='';
+            counterSpace++;
+            arrStock = [...arrResult];
+            arrResult.length = 0;
+        }
+    }
+    create(4);
 
 
     // exercice 24
